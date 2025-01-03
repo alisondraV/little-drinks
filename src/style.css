@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  @apply font-regular;
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'Stardom';
+  src: url('assets/fonts/Stardom.ttf');
+}
+@font-face {
+  font-family: 'Zodiak';
+  src: url('assets/fonts/Zodiak.ttf');
+}
+h1 {
+  @apply text-xl;
+  @apply md:text-3xl;
+  @apply font-header;
+}
+h2 {
+  @apply text-xl;
+  @apply md:text-2xl;
+  @apply font-header;
+}
+h3 {
+  @apply text-lg;
+  @apply md:text-xl;
+  @apply font-header;
+}
