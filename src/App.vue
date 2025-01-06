@@ -3,5 +3,5 @@ import Home from './pages/Home.vue'
 </script>
 
 <template>
-  <Home msg="Little Drinks" />
+  <Home />
 </template>
