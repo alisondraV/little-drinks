@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import VButton from '@/components/VButton.vue'
 
 const featuredDrink = ref({
   name: 'Japanese Treat',
   description: 'A refreshing and unique drink that combines the flavors of Japan',
   image: '/images/japanese-treat.png',
 })
+
+const handleViewRecipe = () => {
+  console.log('View Recipe')
+}
 </script>
 
 <template>
@@ -43,9 +48,9 @@ const featuredDrink = ref({
         <div>
           <h3 class="mb-4">{{ featuredDrink.name }}</h3>
           <p class="mb-6">{{ featuredDrink.description }}</p>
-          <button class="bg-purple text-beige px-6 py-2 rounded-full hover:bg-purple transition-colors">
+          <v-button @onClick="handleViewRecipe">
             View Recipe
-          </button>
+          </v-button>
         </div>
       </div>
     </div>
@@ -66,7 +71,7 @@ const featuredDrink = ref({
           <div class="text-center">
             <div class="text-4xl mb-4">🥂</div>
             <h3 class="mb-2">Events</h3>
-            <p class="text-gray-600">Learn about events I joined</p>
+            <p class="text-gray-600">Events you can find me joining</p>
           </div>
         </div>
       </div>
