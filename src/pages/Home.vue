@@ -22,15 +22,16 @@ const handleViewRecipe = () => {
             For the love of Little Drinks
           </h1>
           <p class="mb-8">
-            My cup of tea
+            Your cup of tea and everything-drinks corner
           </p>
-          <a
-            href="https://www.instagram.com/little.drinkss/"
-            target="_blank"
-            class="bg-white text-dark-purple px-8 py-3 rounded-full hover:bg-purple transition-colors"
-          >
-            Explore Recipes
-          </a>
+          <v-button variant="secondary">
+            <a
+              href="https://www.instagram.com/little.drinkss/"
+              target="_blank"
+            >
+              Explore Recipes
+            </a>
+          </v-button>
         </div>
       </div>
     </div>
@@ -51,28 +52,6 @@ const handleViewRecipe = () => {
           <v-button @onClick="handleViewRecipe">
             View Recipe
           </v-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-gray-100 text-dark-purple py-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="text-4xl mb-4">🍸</div>
-            <h3 class="mb-2">Cocktails</h3>
-            <p class="text-gray-600">Discover creative cocktail recipes</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">🌿</div>
-            <h3 class="mb-2">Mocktails</h3>
-            <p class="text-gray-600">Alcohol-free alternatives</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">🥂</div>
-            <h3 class="mb-2">Events</h3>
-            <p class="text-gray-600">Events you can find me joining</p>
-          </div>
         </div>
       </div>
     </div>

@@ -1,11 +1,28 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const emit = defineEmits(['onClick'])
+interface Props {
+  variant?: 'primary' | 'secondary'
+}
+
+const { variant = 'primary' } = defineProps<Props>()
+
+const variantClasses = computed(() => {
+  switch (variant) {
+    case 'secondary':
+      return 'bg-beige text-purple hover:bg-gray-100'
+    default:
+      return 'bg-purple text-beige hover:bg-dark-purple'
+  }
+})
 </script>
 
 <template>
     <button
         @click="emit('onClick')"
-        class="bg-purple text-beige px-6 py-2 rounded-full hover:bg-dark-purple transition-colors"
+        class="px-6 py-2 rounded-full transition-colors"
+        :class="variantClasses"
     >
         <slot />
     </button>
