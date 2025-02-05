@@ -3,13 +3,15 @@ import { ref } from 'vue'
 import AboutMe from '@/components/AboutMe.vue'
 import VButton from '@/components/VButton.vue'
 
-const emojis = ['🍵', '🧋', '🧃', '🥤', '🍹', '🍸', '🍶', '☕️']
-const fallingEmojis = ref<Array<{ id: number; emoji: string; left: number; delay: number }>>([])
+const drinkImages = [
+  '/images/drinks/japanese-treat.png',
+]
+const fallingDrinks = ref<Array<{ id: number; image: string; left: number; delay: number }>>([])
 
 for (let i = 0; i < 20; i++) {
-  fallingEmojis.value.push({
+  fallingDrinks.value.push({
     id: i,
-    emoji: emojis[Math.floor(Math.random() * emojis.length)],
+    image: drinkImages[Math.floor(Math.random() * drinkImages.length)],
     left: Math.random() * 100,
     delay: Math.random() * 2,
   })
@@ -20,16 +22,20 @@ for (let i = 0; i < 20; i++) {
   <div>
     <div class="relative h-[60vh] text-beige bg-gradient-to-r from-purple to-dark-purple overflow-hidden">
       <div
-        v-for="emoji in fallingEmojis"
-        :key="emoji.id"
+        v-for="drink in fallingDrinks"
+        :key="drink.id"
         class="absolute animate-fall"
         :style="{
-          left: `${emoji.left}%`,
-          animationDelay: `${emoji.delay}s`,
-          fontSize: '28px'
+          top: '-100px',
+          left: `${drink.left}%`,
+          animationDelay: `${drink.delay}s`,
         }"
       >
-        {{ emoji.emoji }}
+        <img
+          :src="drink.image"
+          :alt="'Falling drink'"
+          class="w-12 h-12 object-contain"
+        />
       </div>
       <div class="relative h-full flex items-center justify-center text-center px-4">
         <div class="max-w-3xl">
@@ -59,7 +65,7 @@ for (let i = 0; i < 20; i++) {
 @keyframes fall {
   0% {
     transform: translateY(-20vh);
-    opacity: 1;
+    opacity: 0.8;
   }
   100% {
     transform: translateY(90vh);
@@ -68,6 +74,10 @@ for (let i = 0; i < 20; i++) {
 }
 
 .animate-fall {
-  animation: fall 5s linear infinite;
+  animation: fall 6s linear infinite;
+}
+
+.animate-fall img {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 </style>
