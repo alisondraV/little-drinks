@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AboutMe from '@/components/AboutMe.vue'
 import VButton from '@/components/VButton.vue'
 </script>
 
@@ -24,5 +25,7 @@ import VButton from '@/components/VButton.vue'
         </div>
       </div>
     </div>
+
+    <AboutMe />
   </div>
 </template>
