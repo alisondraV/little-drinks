@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import VButton from '@/components/VButton.vue'
-
-const featuredDrink = ref({
-  name: 'Japanese Treat',
-  description: 'A refreshing and unique drink that combines the flavors of Japan',
-  image: '/images/japanese-treat.png',
-})
-
-const handleViewRecipe = () => {
-  console.log('View Recipe')
-}
 </script>
 
 <template>
@@ -31,26 +20,6 @@ const handleViewRecipe = () => {
             >
               Explore Recipes
             </a>
-          </v-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-dark-purple max-w-7xl mx-auto mt-4 p-8">
-      <h2 class="mb-6">Featured Creations</h2>
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-          <img 
-            :src="featuredDrink.image" 
-            :alt="featuredDrink.name"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div>
-          <h3 class="mb-4">{{ featuredDrink.name }}</h3>
-          <p class="mb-6">{{ featuredDrink.description }}</p>
-          <v-button @onClick="handleViewRecipe">
-            View Recipe
           </v-button>
         </div>
       </div>
