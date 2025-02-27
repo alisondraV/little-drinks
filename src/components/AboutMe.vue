@@ -22,9 +22,10 @@ const images = [
         />
       </div>
       <p class="description text-center">
-        Hi, I’m Alisa — cocktail enthusiast and creator of Little Drinks! 🍸✨
-        I love experimenting with flavors and sharing creative, approachable cocktail and mocktail recipes.
-        Whether you’re a pro or just starting out, I hope Little Drinks inspires you to mix, sip, and enjoy. <br />
+        Hi, I’m Alisa — cocktail enthusiast and creator of Little Drinks! 🍸✨ I love experimenting
+        with flavors and sharing creative, approachable cocktail and mocktail recipes. Whether
+        you’re a pro or just starting out, I hope Little Drinks inspires you to mix, sip, and enjoy.
+        <br />
         Cheers! 🥂
       </p>
     </div>

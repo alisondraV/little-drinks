@@ -21,12 +21,11 @@ const variantClasses = computed(() => {
 </script>
 
 <template>
-    <button
-        @click="emit('onClick')"
-        class="px-6 py-2 rounded-full transition-colors"
-        :class="variantClasses"
-    >
-        <slot />
-    </button>
+  <button
+    @click="emit('onClick')"
+    class="px-6 py-2 rounded-full transition-colors"
+    :class="variantClasses"
+  >
+    <slot />
+  </button>
 </template>
-

@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -16,11 +13,10 @@ export default {
         'dark-purple': '#5D4A66',
       },
       fontFamily: {
-        'header': ['Stardom', 'sans-serif'],
-        'regular': ['Zodiak', 'sans-serif']
+        header: ['Stardom', 'sans-serif'],
+        regular: ['Zodiak', 'sans-serif'],
       },
     },
   },
   plugins: [],
 }
-
