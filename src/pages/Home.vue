@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import AboutMe from '@/components/AboutMe.vue'
 import VButton from '@/components/VButton.vue'
 
+const showAnimation = ref(false);
+
 const drinkImages = [
   '/images/drinks/autumn-matcha.png',
   '/images/drinks/cherry.png',
@@ -28,7 +30,15 @@ for (let i = 0; i < 20; i++) {
 <template>
   <div>
     <div class="relative h-[60vh] text-beige bg-gradient-to-r from-purple to-dark-purple overflow-hidden">
+      <VButton
+          variant="small"
+          @click="showAnimation = !showAnimation"
+          class="absolute z-10 m-2"
+      >
+        {{ showAnimation ? 'Stop Animations :(' : 'Start Animations :)' }}
+      </VButton>
       <div
+        v-if="showAnimation"
         v-for="drink in fallingDrinks"
         :key="drink.id"
         class="absolute animate-fall"
