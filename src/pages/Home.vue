@@ -4,9 +4,14 @@ import AboutMe from '@/components/AboutMe.vue'
 import VButton from '@/components/VButton.vue'
 
 const drinkImages = [
-  '/images/drinks/japanese-treat.png',
+  '/images/drinks/autumn-matcha.png',
+  '/images/drinks/cherry.png',
+  '/images/drinks/chocolate.png',
+  '/images/drinks/japanese.png',
+  '/images/drinks/jasmine.png',
+  '/images/drinks/margarita.png',
 ]
-const fallingDrinks = ref<Array<{ id: number; image: string; left: number; delay: number }>>([])
+const fallingDrinks = ref<Array<{ id: number; image: string; left: number; delay: number; startTop: number; rotation: number }>>([])
 
 for (let i = 0; i < 20; i++) {
   fallingDrinks.value.push({
@@ -14,6 +19,8 @@ for (let i = 0; i < 20; i++) {
     image: drinkImages[Math.floor(Math.random() * drinkImages.length)],
     left: Math.random() * 100,
     delay: Math.random() * 2,
+    startTop: Math.random() * -100,
+    rotation: Math.random() * 360,
   })
 }
 </script>
@@ -26,9 +33,10 @@ for (let i = 0; i < 20; i++) {
         :key="drink.id"
         class="absolute animate-fall"
         :style="{
-          top: '-100px',
+          top: `${drink.startTop}%`,
           left: `${drink.left}%`,
           animationDelay: `${drink.delay}s`,
+          '--end-rotation': `${drink.rotation}deg`,
         }"
       >
         <img
@@ -64,17 +72,18 @@ for (let i = 0; i < 20; i++) {
 <style scoped>
 @keyframes fall {
   0% {
-    transform: translateY(-20vh);
+    transform: translateY(-20vh) rotate(0deg);
     opacity: 0.8;
   }
   100% {
-    transform: translateY(90vh);
+    transform: translateY(90vh) rotate(var(--end-rotation));
     opacity: 0;
   }
 }
 
 .animate-fall {
   animation: fall 6s linear infinite;
+  will-change: transform;
 }
 
 .animate-fall img {
