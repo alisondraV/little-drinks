@@ -1,9 +1,9 @@
 <script setup>
 const images = [
   { src: '/images/me/event.png', alt: 'Event' },
-  { src: '/images/me/event2.png', alt: 'Another Event' },
   { src: '/images/me/sign.png', alt: 'Sign' },
   { src: '/images/me/workshop.png', alt: 'Workshop' },
+  { src: '/images/me/event2.png', alt: 'Another Event' },
 ]
 </script>
 
@@ -12,12 +12,12 @@ const images = [
     <h2 class="mb-6 text-center">About Me</h2>
     <div class="content">
       <div class="balloon-images">
-        <img 
-          v-for="(image, index) in images" 
+        <img
+          v-for="(image, index) in images"
           :key="index"
-          :src="image.src" 
-          :alt="image.alt" 
-          class="balloon floating" 
+          :src="image.src"
+          :alt="image.alt"
+          class="balloon floating"
           :style="`animation-delay: ${index * 0.5}s`"
         />
       </div>

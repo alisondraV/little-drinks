@@ -5,7 +5,7 @@ import VButton from '@/components/VButton.vue'
 
 <template>
   <div>
-    <div class="relative h-[70vh] text-beige bg-gradient-to-r from-purple to-dark-purple">
+    <div class="relative h-[60vh] text-beige bg-gradient-to-r from-purple to-dark-purple">
       <div class="relative h-full flex items-center justify-center text-center px-4">
         <div class="max-w-3xl">
           <h1 class="mb-4">
